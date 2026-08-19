@@ -1,0 +1,147 @@
+# 4-to-2 Encoder Using Verilog
+
+## 📌 Project Overview
+
+This project implements a **4-to-2 Encoder** using Verilog HDL.
+
+An encoder is a combinational logic circuit that converts one active input signal into a corresponding binary code at the output.
+
+In this project, there are **4 input lines** and **2 output lines**.
+
+## 🎯 Objective
+
+The main objective of this project is to design and simulate a 4-to-2 encoder using Verilog HDL and verify its operation using a testbench.
+
+## 🔧 Technologies Used
+
+* Verilog HDL
+* Visual Studio Code
+* Icarus Verilog
+* GTKWave
+* GitHub
+
+## 🧠 Working Principle
+
+The encoder has four inputs:
+
+* D0
+* D1
+* D2
+* D3
+
+and two outputs:
+
+* Y0
+* Y1
+
+Only one input should be HIGH at a time.
+
+The corresponding binary value is generated at the output.
+
+For example:
+
+* D0 = 1 → Y = 00
+* D1 = 1 → Y = 01
+* D2 = 1 → Y = 10
+* D3 = 1 → Y = 11
+
+## 📊 Truth Table
+
+| D3 | D2 | D1 | D0 | Y1 | Y0 |
+| -- | -- | -- | -- | -- | -- |
+| 0  | 0  | 0  | 1  | 0  | 0  |
+| 0  | 0  | 1  | 0  | 0  | 1  |
+| 0  | 1  | 0  | 0  | 1  | 0  |
+| 1  | 0  | 0  | 0  | 1  | 1  |
+
+## 📝 Boolean Expressions
+
+The output equations are:
+
+Y1 = D2 + D3
+
+Y0 = D1 + D3
+
+where `+` represents the OR operation.
+
+## 📁 Project Files
+
+### `encoder_4to2.v`
+
+Contains the main Verilog design of the 4-to-2 encoder.
+
+### `encoder_4to2_tb.v`
+
+Contains the testbench used to verify the encoder.
+
+### `simulation_output.txt`
+
+Contains the expected simulation results.
+
+## ▶️ How to Run the Simulation
+
+### Step 1: Install Icarus Verilog
+
+Install Icarus Verilog on your computer.
+
+### Step 2: Open the Project
+
+Open the project folder in Visual Studio Code.
+
+### Step 3: Compile the Verilog Code
+
+Run:
+
+```bash
+iverilog -o encoder_sim encoder_4to2.v encoder_4to2_tb.v
+```
+
+### Step 4: Run the Simulation
+
+Run:
+
+```bash
+vvp encoder_sim
+```
+
+You will see the input and output values in the terminal.
+
+## 📈 Expected Output
+
+```text
+Time = 0  | D = 0001 | Y = 00
+Time = 10 | D = 0010 | Y = 01
+Time = 20 | D = 0100 | Y = 10
+Time = 30 | D = 1000 | Y = 11
+```
+
+## 💡 Applications
+
+Encoders are used in:
+
+* Digital electronics
+* Data transmission
+* Keyboard circuits
+* Processor and control systems
+* Digital communication systems
+* Priority encoding circuits
+
+## 🚀 Future Improvements
+
+This project can be extended to:
+
+* 8-to-3 Encoder
+* 16-to-4 Encoder
+* Priority Encoder
+* Encoder using structural modeling
+* FPGA implementation
+
+## 👨‍💻 Author
+
+JAHNAVI BATTINI
+
+B.Tech – Electronics and Communication Engineering
+
+## ⭐ Conclusion
+
+The 4-to-2 encoder was successfully designed using Verilog HDL and verified using a testbench. The simulation results match the expected truth table, confirming the correct operation of the encoder.
